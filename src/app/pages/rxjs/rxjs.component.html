@@ -1,0 +1,55 @@
+<!--
+ * @Author: jun.zhao saviour2008@126.com
+ * @Date: 2022-10-03 21:57:52
+ * @LastEditors: jun.zhao saviour2008@126.com
+ * @LastEditTime: 2022-10-04 00:32:21
+ * @FilePath: \angular-demo-ant-design\src\app\pages\rxjs\rxjs.component.html
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+-->
+<p><span>test concat</span><strong #concat></strong></p>
+<p><span>test concat</span><strong #strong></strong></p>
+<app-button></app-button>
+<div style="position: relative"><app-alert></app-alert></div>
+<app-layout
+  ><p>1111</p>
+  <div>2222</div></app-layout
+>
+<app-layout
+  ><h1>1111</h1>
+  <div>2222</div></app-layout
+>
+<app-layout
+  ><div ngProjectAs="h1"><h1>999</h1></div></app-layout
+>
+
+<app-layout [dynamicRef]="useBySlotRef"
+  ><div>下面是动态组件，由父组件进行传入</div></app-layout
+>
+
+<ng-template
+  #useBySlotRef
+  let-childDefaultValue
+  let-childPropValue="valueInContent"
+  >{{ childPropValue }}{{ childDefaultValue }}-----{{ parentValueInContent
+  }}<button (click)="handleSlotClick()">text</button></ng-template
+>
+
+<button (click)="handleConcatMap()">try concat map</button>
+
+<button (click)="handleMap()">try map</button>
+
+<button (click)="handleMapTo()">try mapto</button>
+
+<button (click)="handleMergeMap()">try merge map</button>
+
+<button (click)="handleSwitchMap()">try switch map</button>
+
+<button (click)="handleConcatAll()">try concat all</button>
+
+<button (click)="handleMergeAll()">try merge all</button>
+
+<button (click)="handleForkJoin()">try fork join</button>
+
+<button (click)="handleZip()">try zip 111</button>
+
+<button (click)="handleCombineLatest()">try CombineLatest</button>
