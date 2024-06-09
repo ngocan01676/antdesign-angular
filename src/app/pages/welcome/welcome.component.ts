@@ -140,4 +140,10 @@ export class WelcomeComponent implements OnInit {
       this.myForm.get('date')!.setValue(parsedDate);
     }
   }
+
+  ngModelChange($event, removeEvent: boolean) {
+    if (removeEvent) {
+      console.log('$event ngModelChange', $event)
+    }
+  }
 }
