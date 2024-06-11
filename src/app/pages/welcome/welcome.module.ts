@@ -11,7 +11,7 @@ import { WelcomeRoutingModule } from './welcome-routing.module'
 import { WelcomeComponent } from './welcome.component'
 import { ComponentsModule } from 'src/app/components/components.module'
 import { SharedModule } from 'src/app/shared/shared.module'
-import { NzDatePickerModule, NzSelectModule } from 'ng-zorro-antd'
+import { NzDatePickerModule, NzSelectModule, NzToolTipModule } from 'ng-zorro-antd'
 
 @NgModule({
   imports: [
@@ -22,7 +22,8 @@ import { NzDatePickerModule, NzSelectModule } from 'ng-zorro-antd'
     SharedModule,
     ReactiveFormsModule,
     NzDatePickerModule,
-    NzSelectModule
+    NzSelectModule,
+    NzToolTipModule
   ],
   // providers: [{ provide: UserService, useFactory: UserServiceFactory }],
   declarations: [WelcomeComponent],

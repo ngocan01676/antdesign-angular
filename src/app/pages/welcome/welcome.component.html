@@ -92,7 +92,7 @@
     </div>
     <div>
       <nz-select [nzMaxTagCount]="3" [nzMaxTagPlaceholder]="tagPlaceHolder" nzMode="multiple"
-        nzPlaceHolder="Please select" formControlName="control" (ngModelChange)="ngModelChange($event, true)">
+        nzPlaceHolder="Please select" [formControlName]="'control'">
         <nz-option *ngFor="let item of listOfOption" [nzLabel]="item" [nzValue]="item"></nz-option>
       </nz-select>
       <ng-template #tagPlaceHolder let-selectedList>and {{ selectedList.length }} more selected</ng-template>
@@ -106,4 +106,12 @@
 
   <button (click)="updateValueWithoutEmitEvent('c12')">Set Value Without Emit Event</button>
   <button (click)="updateValue()">Update value</button>
+</div>
+
+<div class="container">
+  <div nz-tooltip [nzTooltipTitle]="getTooltipTitle()">
+    <nz-select nzMode="multiple" nzPlaceHolder="Select items" [(ngModel)]="selectedItems" style="width: 100%;">
+      <nz-option *ngFor="let item of items" [nzLabel]="item" [nzValue]="item"></nz-option>
+    </nz-select>
+  </div>
 </div>

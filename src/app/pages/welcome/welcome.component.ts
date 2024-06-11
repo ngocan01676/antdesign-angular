@@ -25,6 +25,8 @@ export class WelcomeComponent implements OnInit {
   listOfOption: string[] = [];
   listOfSelectedValue = ['a10', 'c12'];
   exampleControl = new FormControl('');
+  items = ['Item 1', 'Item 2', 'Item 3', 'Item 4', 'Item 5'];
+  selectedItems: string[] = [];
   constructor(
     private injector: Injector,
     private userService: UserService,
@@ -82,7 +84,7 @@ export class WelcomeComponent implements OnInit {
     console.log("this.listOfOption", this.listOfOption);
     this.myForm = this.fb.group({
       date: ['', Validators.required],
-      control: []
+      // control: []
     });
 
     // Subscribe to valueChanges with proper type handling
@@ -145,5 +147,13 @@ export class WelcomeComponent implements OnInit {
     if (removeEvent) {
       console.log('$event ngModelChange', $event)
     }
+  }
+
+  onSelectionChange(selected: string[]): void {
+    this.selectedItems = selected;
+  }
+
+  getTooltipTitle(): string {
+    return this.selectedItems.length > 0 ? this.selectedItems.join(', ') : 'No items selected';
   }
 }
